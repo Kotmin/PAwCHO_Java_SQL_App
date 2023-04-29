@@ -13,7 +13,6 @@ jar cfe jdb-app.jar Main Main.class
 
 FROM openjdk:8-jre-alpine AS java_build
 
-FROM openjdk:8-jre-alpine AS builder
 
 ENV CLASSPATH /app/mysql-connector-java-8.0.27.jar
 
