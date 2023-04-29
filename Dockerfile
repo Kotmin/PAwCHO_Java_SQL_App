@@ -6,8 +6,9 @@ WORKDIR /app
 
 COPY ./src/Main.java /app/
 
-RUN javac Main.java; \
-jar cfe jdb-app.jar Main Main.class
+RUN javac Main.java
+
+RUN jar cfe jdb-app.jar Main Main.class
 
 
 
