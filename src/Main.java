@@ -23,7 +23,7 @@ public class Main {
                 System.out.print("Enter your choice: ");
                 int choice = scanner.nextInt();
                 scanner.nextLine();
-
+                int id;
                 switch (choice) {
                     case 1:
                         System.out.print("Enter new task: ");
@@ -35,7 +35,7 @@ public class Main {
                         break;
                     case 2:
                         System.out.print("Enter the ID of the task to delete: ");
-                        int id = scanner.nextInt();
+                        id = scanner.nextInt();
                         scanner.nextLine();
                         PreparedStatement deleteStatement = connection.prepareStatement("DELETE FROM tasks WHERE id = ?");
                         deleteStatement.setInt(1, id);
@@ -58,7 +58,7 @@ public class Main {
                         Statement displayStatement = connection.createStatement();
                         ResultSet resultSet = displayStatement.executeQuery("SELECT * FROM tasks");
                         while (resultSet.next()) {
-                            int id = resultSet.getInt("id");
+                            id = resultSet.getInt("id");
                             String itemName = resultSet.getString("name");
                             System.out.println("Task " + id + ": " + itemName);
                         }
