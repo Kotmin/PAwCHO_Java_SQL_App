@@ -21,7 +21,7 @@ ENV CLASSPATH /app/mysql-connector-java-8.0.27.jar
 COPY --from=builder /app/jdb-app.jar /app
 
 # Download the MySQL connector JAR file
-ENV MYSQL_DRIVER_VERSION="8.0.15"
+ENV MYSQL_DRIVER_VERSION="8.0.26"
 # https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.26.tar.gz
 
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz && tar xvzf mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz mysql-connector-java-${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar --strip-components=1 && rm mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz
@@ -45,7 +45,7 @@ COPY mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar /app
 #COPY lib/mysql-connector-java-8.0.27.jar /app
 
 # Add the mysql-connector-java driver to the classpath
-ENV CLASSPATH /app/mysql-connector-java-8.0.27.jar
+ENV CLASSPATH /app/mysql-connector-java-8.0.26.jar
 
 # Run the application jar file
 CMD ["java", "-jar", "jdb-app.jar"]
