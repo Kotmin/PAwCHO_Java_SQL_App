@@ -22,9 +22,7 @@ COPY --from=builder /app/jdb-app.jar /app
 
 # Download the MySQL connector JAR file
 ENV MYSQL_DRIVER_VERSION="8.0.15"
-RUN yes | wget -O mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar\
- https://repo1.maven.org/maven2/mysql/mysql-connector-java/\
- ${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar
+RUN yes | wget -O mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/ ${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar
 
 # RUN yes | wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar -P /app
 
