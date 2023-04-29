@@ -48,7 +48,7 @@ public class Main {
                         scanner.nextLine();
                         System.out.print("Enter the new task name: ");
                         String newName = scanner.nextLine();
-                        PreparedStatement modifyStatement = connection.prepareStatement("UPDATE items SET name = ? WHERE id = ?");
+                        PreparedStatement modifyStatement = connection.prepareStatement("UPDATE tasks SET name = ? WHERE id = ?");
                         modifyStatement.setString(1, newName);
                         modifyStatement.setInt(2, itemId);
                         modifyStatement.executeUpdate();
