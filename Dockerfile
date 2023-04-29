@@ -4,7 +4,7 @@ FROM openjdk:8-jre-alpine AS builder
 # Set the working directory to /app
 WORKDIR /app
 
-COPY ./src/Main.java /app/
+COPY /src/Main.java /app/
 
 RUN javac Main.java
 
