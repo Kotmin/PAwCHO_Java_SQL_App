@@ -22,7 +22,20 @@ COPY --from=builder /app/jdb-app.jar /app
 
 # Download the MySQL connector JAR file
 ENV MYSQL_DRIVER_VERSION="8.0.15"
-RUN yes | wget -O mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/ ${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar
+
+RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz && \
+    tar xvzf mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz mysql-connector-java-${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar --strip-components=1 && \
+    rm mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz
+
+# Copy the JAR file to the appropriate directory
+COPY mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar /app
+
+# RUN yes | wget -O mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/ ${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar
+
+# RUN yes | wget -O https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz
+
+
+# https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz
 
 # RUN yes | wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar -P /app
 
