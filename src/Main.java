@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String jdbcUrl = "jdbc:mysql://mysql-container:3306/testdb";
+        String jdbcUrl = "jdbc:mysql://mysql-container:3306/my_db";
         String username = "root";
         String password = "root";
 
