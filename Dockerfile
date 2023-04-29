@@ -8,7 +8,7 @@ COPY /src/Main.java /app/
 
 RUN javac Main.java
 
-RUN jar cfe jdb-app.jar Main Main.class
+RUN jar cvf jdb-app.jar Main Main.class
 
 
 
