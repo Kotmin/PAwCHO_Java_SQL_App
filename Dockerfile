@@ -28,6 +28,8 @@ RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${
 RUN tar xvzf mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar --strip-components=1
 RUN rm mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz
 
+RUN ls -la
+
 # Copy the JAR file to the appropriate directory
 COPY mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar /app
 
