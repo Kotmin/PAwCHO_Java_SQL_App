@@ -1,5 +1,5 @@
 # Use a Java 8 runtime as a parent image
-FROM openjdk:8-jre-alpine AS builder
+FROM openjdk:8-jdk-alpine AS builder
 
 # Set the working directory to /app
 WORKDIR /app
