@@ -5,7 +5,7 @@ FROM mysql:5.7
 ENV MYSQL_ROOT_PASSWORD="root"
 
 # Copy a custom MySQL configuration file into the container
-COPY my.cnf /etc/mysql/my.cnf
+# COPY my.cnf /etc/mysql/my.cnf
 
 # Set the character set for the MySQL server
 RUN echo "[mysqld]\ncharacter-set-server=utf8mb4" >> /etc/mysql/my.cnf
