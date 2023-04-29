@@ -15,7 +15,7 @@ EXPOSE 3306
 
 
 COPY init.sql /docker-entrypoint-initdb.d/
-COPY create-table.sql /docker-entrypoint-initdb.d/
+COPY create_table.sql /docker-entrypoint-initdb.d/
 
 # Start the MySQL server when the container starts
 CMD ["mysqld"]
