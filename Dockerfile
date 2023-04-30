@@ -15,10 +15,10 @@ RUN jar cvf jdb-app.jar Main.class
 FROM openjdk:8-jre-alpine AS java_build
 
 
-ENV CLASSPATH /app/mysql-connector-java-8.0.27.jar
+# ENV CLASSPATH /app/mysql-connector-java-8.0.27.jar
 
 # Copy the application jar file and mysql-connector-java driver to the container
-COPY --from=builder /app/jdb-app.jar /app
+COPY --from=builder /app/jdb-app.jar /app/
 
 # Download the MySQL connector JAR file
 ENV MYSQL_DRIVER_VERSION="8.0.26"
