@@ -72,6 +72,10 @@ RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${
 
 
 # CMD ["java", "-cp", "/app/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar:/app/jdb-app.jar", "Main"]
-ENV CLASSPATH /app/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar
+# ENV CLASSPATH /app/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar
+
+# Updated ENV
+ENV CLASSPATH /app/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar:$CLASSPATH
+
 
 CMD ["java", "-jar", "/app/jdb-app.jar"]
