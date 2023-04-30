@@ -12,7 +12,7 @@ public class Main {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-
+            
             Scanner scanner = new Scanner(System.in);
             while (true) {
                 System.out.println("1. Add new task");
