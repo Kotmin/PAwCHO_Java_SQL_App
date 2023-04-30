@@ -67,7 +67,6 @@ FROM openjdk:8-jre-alpine AS java_build
 COPY --from=builder /app/jdb-app.jar /app/
 ENV MYSQL_DRIVER_VERSION="8.0.26"
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz && \
-    tar xvzf mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz mysql-connector-java-${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar --strip-components=1 && \
-    rm mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz
-COPY mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar /app/
+    tar xvzf mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz --strip-components=1 --no-same-owner -C /tmp && \
+    cp /tmp/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar /app/
 CMD ["java", "-cp", "/app/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar:/app/jdb-app.jar", "Main"]
