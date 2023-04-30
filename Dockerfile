@@ -60,9 +60,9 @@
 
 FROM openjdk:8-jdk-alpine AS builder
 WORKDIR /app
-COPY /src/Main.java /app/
+COPY /src/Main.java /src/MANIFEST.MF /app/
 RUN javac Main.java
-RUN jar cvf jdb-app.jar Main.class
+RUN jar cvfm jdb-app.jar MANIFEST.MF Main.class
 FROM openjdk:8-jre-alpine AS java_build
 COPY --from=builder /app/jdb-app.jar /app/
 ENV MYSQL_DRIVER_VERSION="8.0.26"
