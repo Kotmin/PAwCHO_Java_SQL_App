@@ -65,7 +65,7 @@ RUN javac Main.java
 RUN jar cvfm jdb-app.jar MANIFEST.MF Main.class
 FROM openjdk:8-jre-alpine AS java_build
 COPY --from=builder /app/jdb-app.jar /app/
-ENV MYSQL_DRIVER_VERSION="8.0.26"
+ENV MYSQL_DRIVER_VERSION="8.0.27"
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz && \
     tar xvzf mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz --strip-components=1 --no-same-owner -C /tmp && \
     cp /tmp/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar /app/
