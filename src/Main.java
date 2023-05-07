@@ -1,3 +1,4 @@
+import java.sql.*;
 import java.util.Scanner;
 
 public class Main {
@@ -103,7 +104,7 @@ class Task {
     }
 }
 
-import java.sql.*;
+
 
 class TaskController {
     private static final String DB_URL = "jdbc:mysql://my_db:3306/my_db";
