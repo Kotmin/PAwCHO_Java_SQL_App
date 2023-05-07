@@ -97,7 +97,7 @@
 # next of next
 
 
-FROM java:8
+FROM openjdk:11
 COPY ./src/ /
 WORKDIR /
 RUN javac Main.java
