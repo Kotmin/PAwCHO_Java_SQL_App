@@ -89,9 +89,9 @@ ENV MYSQL_DRIVER_VERSION="8.0.27"
 
 
 
-ENV CLASSPATH=/app/mysql-connector-j-8.0.33.jar:$CLASSPATH
+# ENV CLASSPATH=/app/mysql-connector-j-8.0.33.jar:$CLASSPATH
 
-CMD ["java", "-cp", "/app/mysql-connector-j-8.0.33.jar:/app/jdb-app.jar", "com.mysql.cj.jdbc.Driver", "jdb-app.jar"]
+CMD ["java", "-cp", "mysql-connector-j-8.0.33.jar:.","Main"]
 
 
 
