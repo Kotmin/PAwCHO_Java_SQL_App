@@ -58,17 +58,17 @@
 
 # New
 
-FROM openjdk:8-jdk-alpine AS builder
-WORKDIR /app
-COPY /src/Main.java /src/MANIFEST.MF /app/
-RUN javac Main.java
-RUN jar cvfm jdb-app.jar MANIFEST.MF Main.class
+# FROM openjdk:8-jdk-alpine AS builder
+# WORKDIR /app
+# COPY /src/Main.java /src/MANIFEST.MF /app/
+# RUN javac Main.java
+# RUN jar cvfm jdb-app.jar MANIFEST.MF Main.class
 
 
-FROM openjdk:8-jre-alpine AS java_build
-COPY --from=builder /app/jdb-app.jar /app/
-COPY /src/mysql-connector-j-8.0.33.jar /app/
-ENV MYSQL_DRIVER_VERSION="8.0.27"
+# FROM openjdk:8-jre-alpine AS java_build
+# COPY --from=builder /app/jdb-app.jar /app/
+# COPY /src/mysql-connector-j-8.0.33.jar /app/
+# ENV MYSQL_DRIVER_VERSION="8.0.27"
 # RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz && \
 #     tar xvzf mysql-connector-java-${MYSQL_DRIVER_VERSION}.tar.gz --strip-components=1 --no-same-owner -C /tmp && \
 #     cp /tmp/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar /app/
@@ -91,6 +91,16 @@ ENV MYSQL_DRIVER_VERSION="8.0.27"
 
 # ENV CLASSPATH=/app/mysql-connector-j-8.0.33.jar:$CLASSPATH
 
+# CMD ["java", "-cp", "mysql-connector-j-8.0.33.jar:.","Main"]
+
+
+# next of next
+
+
+FROM java:8
+COPY ./src/ /
+WORKDIR /
+RUN javac Main.java
 CMD ["java", "-cp", "mysql-connector-j-8.0.33.jar:.","Main"]
 
 
