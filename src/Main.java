@@ -10,8 +10,8 @@ public class Main {
         String password = "pass123";
 
         try {
-            // Class.forName("com.mysql.cj.jdbc.Driver");
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
             
             Scanner scanner = new Scanner(System.in);
