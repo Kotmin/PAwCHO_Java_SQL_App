@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String jdbcUrl = "jdbc:mysql://my_db:3306/my_db";
-        String username = "root";
-        String password = "root";
+        String username = "student";
+        String password = "pass123";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
