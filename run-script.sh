@@ -2,7 +2,7 @@
 
 
 docker build . -t my_sql_server_for_java -f mysql/Dockerfile
-docker run -p 3306:3306 -d my_sql_server_for_java --rm
+docker run -p 3306:3306 -d --name my_db my_sql_server_for_java 
 
 docker build . -t java_console_crud_app
 

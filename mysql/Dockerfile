@@ -1,8 +1,9 @@
 
 FROM mysql:5.7
 
-
+ENV MYSQL_USER="root"
 ENV MYSQL_ROOT_PASSWORD="root"
+ENV MYSQL_DATABASE="my_db"
 
 # Copy a custom MySQL configuration file into the container
 # COPY my.cnf /etc/mysql/my.cnf
