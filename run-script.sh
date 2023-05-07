@@ -9,7 +9,7 @@ docker build . -t java_console_crud_app
 docker run -it --tty --name java_console_crud_app --rm java_console_crud_app
 
 
-docker stop my_sql_server_for_java
+docker stop my_db
 docker stop java_console_crud_app
 
 echo "Script ended"
