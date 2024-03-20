@@ -24,7 +24,7 @@ chmod +x run-script.sh
 
 ### Network Creation
 
-To avoid linking containers directly, we script creates a special network for them. This approach facilitates cleaner and more manageable container intercommunication.
+To avoid linking containers directly,  script creates a special network for them. This approach facilitates cleaner and more manageable container intercommunication.
 
 
 ### MySQL Container
